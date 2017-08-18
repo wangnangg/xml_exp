@@ -4,7 +4,7 @@
 
 TEST(test_absyn_tree, eval_add_exp)
 {
-    exp_crtor crtor;
+    exp_alloc crtor;
     stack st(2000);
     auto sc = st.init_scope();
     auto val1 = crtor.create<value_exp>(1.0);
@@ -18,7 +18,7 @@ TEST(test_absyn_tree, eval_add_exp)
 }
 TEST(test_absyn_tree, func_call)
 {
-    exp_crtor crtor;
+    exp_alloc crtor;
     stack st(2000);
     auto sc = st.init_scope();
     func_env_crtor env_crt;
@@ -41,7 +41,7 @@ TEST(test_absyn_tree, func_call)
 
 TEST(test_absyn_tree, factor_func)
 {
-    exp_crtor crtor;
+    exp_alloc crtor;
     stack st(2000);
     auto sc = st.init_scope();
     func_env_crtor env_crt;

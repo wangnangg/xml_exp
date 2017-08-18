@@ -55,6 +55,7 @@ public:
     virtual double eval(scope sc) const = 0;
     virtual void visit(const visitor_t& visit) { visit(this); }
 };
+
 using func_map_t = std::unordered_map<std::string, exp*>;
 class func_env
 {
@@ -71,6 +72,7 @@ public:
 
 void link_func(func_env&);
 
+
 class func_env_crtor
 {
     func_map_t _func_map;
@@ -83,7 +85,7 @@ public:
 
 inline double eval(exp* e, scope sc) { return e->eval(sc); }
 
-class exp_crtor
+class exp_alloc
 {
     std::vector<std::unique_ptr<exp>> _alloc_exp;
 
